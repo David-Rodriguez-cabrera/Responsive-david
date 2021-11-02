@@ -25,3 +25,15 @@
 #container a {
   text-decoration: none;
 }
+
+@media screen {
+  ion-content {
+    --background: black;
+    --color: blue;
+  }
+}
+ 
+    ion-card-content {
+      color: yellow;
+      background-color: red;
+    }
