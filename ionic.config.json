@@ -1,0 +1,7 @@
+{
+  "name": "Responsive",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
