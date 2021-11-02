@@ -26,14 +26,23 @@
   text-decoration: none;
 }
 
-@media screen {
-  ion-content {
-    --background: black;
-    --color: blue;
-  }
-}
- 
-    ion-card-content {
-      color: yellow;
-      background-color: red;
+@media screen and (orientation:portrait) {
+    p{
+      display:none;
     }
+  }
+  
+ion-content {
+  --background: green;
+  --color: blue;
+}
+    ion-card-content {
+      background-color: blue;
+    }
+    h1 {
+      color: yellow;
+    }
+    p {
+      color: white;
+    }
+    
