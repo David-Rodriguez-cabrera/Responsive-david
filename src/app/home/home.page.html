@@ -7,21 +7,35 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-input [(ngModel)]="filtro" placeholder="Introduce los datos del filtro">
+
+  </ion-input>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let user of users | async" size-xl="2" size-lg="2" size-md="4" size-sm="6" size-xs="12">
+      <ng-container *ngFor="let user of users | async" size-xl="2" size-lg="2" size-md="4" size-sm="6" size-xs="12">
+      <ion-col *ngIf="filtro=='' || user.first_name.startsWith(filtro)">
         <ion-card>
           
-          <ion-card-content>
+          <ion-card-content *ngIf="user.gender == 'Male'">
+            <ion-avatar>
+              <img [src]= "user.imagen">
+            </ion-avatar>
+            
+          <h1>{{ user.id }} {{ user.first_name }} {{ user.last_name }}</h1>
+          <h2>{{ user.gender }}</h2>
+            <p>Hola Mundo</p>
+          </ion-card-content>
+          <ion-card-content *ngIf="user.gender != 'Male'">
             <ion-avatar>
             </ion-avatar>
             
           <h1>{{ user.id }} {{ user.first_name }}</h1>
-         
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis dignissim interdum. Sed libero elit, auctor a risus et, cursus ultrices ex. Duis eu gravida arcu. Nulla facilisi. Fusce porta turpis eleifend leo porta, a semper enim tincidunt. Donec feugiat, urna quis hendrerit auctor, lorem elit bibendum augue, nec egestas urna enim in sapien. Nulla at elementum libero. In scelerisque sem sed vestibulum porta. Pellentesque scelerisque ipsum sed lobortis dapibus. Fusce scelerisque leo in nisi aliquet porta.</p>
+          <h2>{{ user.gender }}</h2>
+            <p>Hola Mundo</p>
           </ion-card-content>
         </ion-card>
       </ion-col>
+    </ng-container>
     </ion-row>
   </ion-grid>
 </ion-content>

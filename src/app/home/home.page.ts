@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 export class HomePage {
 
   users: any;
+  filtro: string = "";
 
 
   constructor(private httpClient: HttpClient) {
