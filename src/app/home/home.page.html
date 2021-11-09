@@ -27,6 +27,7 @@
           </ion-card-content>
           <ion-card-content *ngIf="user.gender != 'Male'">
             <ion-avatar>
+              <img [src]= "user.imagen">
             </ion-avatar>
             
           <h1>{{ user.id }} {{ user.first_name }}</h1>
